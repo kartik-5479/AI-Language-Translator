@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LinguaLift AI Translator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="LinguaLift home">
+          <span class="brand-mark">L</span>
+          <span>
+            <strong>LinguaLift</strong>
+            <small>AI language translator</small>
+          </span>
+        </a>
+        <nav class="top-actions" aria-label="Primary">
+          <a href="#translator">Translator</a>
+          <a href="#phrases">Phrases</a>
+          <a href="history.html">History</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">
+            <span class="theme-icon" aria-hidden="true"></span>
+            <span id="themeLabel">Dark</span>
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">Fast, clear, human-friendly translation</p>
+            <h1 id="hero-title">LinguaLift AI Translator</h1>
+            <p class="hero-text">
+              Translate everyday messages, travel phrases, study notes, and business replies with a clean workspace that stays out of your way.
+            </p>
+          </div>
+          <div class="hero-panel" aria-label="Live translation status">
+            <span class="pulse"></span>
+            <div>
+              <strong id="statusTitle">Ready to translate</strong>
+              <small id="statusDetail">Type or choose a phrase to begin.</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="translator" id="translator" aria-label="Translator workspace">
+          <div class="toolbar">
+            <div class="select-group">
+              <label for="sourceLang">From</label>
+              <select id="sourceLang"></select>
+            </div>
+            <button class="icon-button" id="swapBtn" type="button" title="Swap languages" aria-label="Swap languages">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h11l-3-3 1.4-1.4L21.8 8l-5.4 5.4L15 12l3-3H7V7Zm10 10H6l3 3-1.4 1.4L2.2 16l5.4-5.4L9 12l-3 3h11v2Z"/></svg>
+            </button>
+            <div class="select-group">
+              <label for="targetLang">To</label>
+              <select id="targetLang"></select>
+            </div>
+          </div>
+
+          <div class="translation-grid">
+            <article class="text-panel">
+              <div class="panel-header">
+                <h2>Original</h2>
+                <span id="charCount">0 / 500</span>
+              </div>
+              <textarea id="sourceText" maxlength="500" placeholder="Type text to translate..."></textarea>
+              <div class="panel-actions">
+                <button id="clearBtn" type="button">Clear</button>
+                <button id="listenSourceBtn" type="button">Listen</button>
+              </div>
+            </article>
+
+            <article class="text-panel output-panel">
+              <div class="panel-header">
+                <h2>Translation</h2>
+                <span id="confidenceLabel">Idle</span>
+              </div>
+              <div id="translatedText" class="translation-output" role="status" aria-live="polite">Your translation will appear here.</div>
+              <div class="panel-actions">
+                <button id="copyBtn" type="button">Copy</button>
+                <button id="listenTargetBtn" type="button">Listen</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-band" id="phrases">
+          <div class="section-heading">
+            <p class="eyebrow">Quick starts</p>
+            <h2>Useful phrases</h2>
+          </div>
+          <div class="phrase-grid" id="phraseGrid"></div>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="static/js/theme.js"></script>
+    <script src="static/js/app.js"></script>
+  </body>
+</html>

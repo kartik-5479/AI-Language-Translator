@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Translation History | LinguaLift</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="LinguaLift home">
+          <span class="brand-mark">L</span>
+          <span>
+            <strong>LinguaLift</strong>
+            <small>Translation history</small>
+          </span>
+        </a>
+        <nav class="top-actions" aria-label="Primary">
+          <a href="index.html#translator">Translator</a>
+          <a href="index.html#phrases">Phrases</a>
+          <a href="history.html" aria-current="page">History</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">
+            <span class="theme-icon" aria-hidden="true"></span>
+            <span id="themeLabel">Dark</span>
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero" aria-labelledby="history-title">
+          <p class="eyebrow">Saved locally</p>
+          <h1 id="history-title">Translation History</h1>
+          <p class="hero-text">Review your recent translations, copy useful results, or clear the list when you want a fresh workspace.</p>
+        </section>
+
+        <section class="content-band history-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Recent work</p>
+              <h2>Your saved translations</h2>
+            </div>
+            <div class="section-actions">
+              <button id="downloadHistoryBtn" type="button">Download CSV</button>
+              <button id="clearHistoryBtn" type="button">Clear history</button>
+            </div>
+          </div>
+          <div class="history-list history-page-list" id="historyList">
+            <p class="empty-state">No translations yet.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="static/js/theme.js"></script>
+    <script src="static/js/history.js"></script>
+  </body>
+</html>
